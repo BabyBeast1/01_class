@@ -40,7 +40,6 @@ public class PersonDTO implements Comparable<PersonDTO>{
 		/*if(this.age < p.age) return -1;
 		else if(this.age > p.age) return 1;
 		else return 0;*/
-		
 		// 나이로 내림차순
 		if(this.age < p.age) return 1;
 		else if(this.age > p.age) return -1;

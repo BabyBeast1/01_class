@@ -3,6 +3,7 @@ package collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PersonSort {
 	
@@ -46,6 +47,33 @@ public class PersonSort {
 			System.out.println(personDTO);
 		}
 		System.out.println();
+		System.out.println("--------------------------------------");
+		
+		System.out.println("정렬 전");
+		for(PersonDTO personDTO : list) {
+			System.out.println(personDTO);
+		}
+		System.out.println();
+		
+		System.out.println("이름으로 오름차순");
+	    Comparator<PersonDTO> com = new Comparator<PersonDTO>() {
+	    	@Override
+	    	public int compare(PersonDTO p1, PersonDTO p2) { // 구현부를 가질 수 있는 건 Class밖에 없다
+	    		
+	    	//	return p1.getName().compareTo(p2.getName()); // 오름차순
+
+	    		return p1.getName().compareTo(p2.getName()) * -1; // 내림차순
+
+	    	}
+	    };
+	    Collections.sort(list, com);
+	    
+	    System.out.println("정렬 후");
+		for(PersonDTO personDTO : list) {
+			System.out.println(personDTO);
+		}
+		System.out.println();
+		
 	}
 
 }

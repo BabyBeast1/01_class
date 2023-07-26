@@ -1,38 +1,17 @@
 package sungJuk;
 
-import java.util.Scanner;
-
 public class SungJukMain {
 
-    public static void main(String[] args) {
-        SungJukService service = new SungJukService();
-        Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+		SungJukService sungJukService = new SungJukService();
+		sungJukService.menu();
+		System.out.println("프로그램 종료합니다.");
+	}
 
-        while (true) {
-            System.out.println("1: 성적 입력  2: 성적 출력  3: 종료");
-            int choice = sc.nextInt();
-            sc.nextLine(); // 개행 문자 제거
-
-            switch (choice) {
-                case 1:
-                    service.disp();
-                    break;
-                case 2:
-                    service.display();
-                    break;
-                case 3:
-                    System.out.println("프로그램을 종료합니다.");
-                    sc.close();
-                    return;
-                default:
-                    System.out.println("잘못된 선택입니다. 다시 선택하세요.");
-            }
-        }
-    }
 }
 
-
-/*[문제] 성적 처리
+/*
+[문제] 성적 처리
 Package : sungJuk
 Class   : SungJukMain.java
           SungJukService.java
@@ -49,6 +28,7 @@ implements Class    : SungJukInsert.java
 	                  SungJukSort.java
 
 
+[조건]
 1. SungJukDTO.java
 필드   : no(번호), 이름, 국어, 영어, 수학, 총점, 평균
 메소드 : 생성자를 이용하여 데이터 얻기
@@ -116,3 +96,7 @@ implements Class    : SungJukInsert.java
 ********************
   번호 : 
 */
+
+
+
+
