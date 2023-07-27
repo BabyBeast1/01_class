@@ -13,12 +13,15 @@ public class MemberFileInput implements Member, Serializable{
 public void execute(ArrayList<MemberDTO> arrayList) throws IOException, ClassNotFoundException, Exception {
 	 ObjectInputStream ois = new ObjectInputStream(new FileInputStream("member.txt")); 
      
+	 arrayList.clear(); // arrayList 초기화
+	 
      try {
         while(true) {
         MemberDTO memberDTO = (MemberDTO)ois.readObject();
         arrayList.add(memberDTO);
         }
      }catch(EOFException e) {
+    	 
      }
      ois.close();
      System.out.println("파일을 정상적으로 읽어들였습니다.");

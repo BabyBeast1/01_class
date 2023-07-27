@@ -19,14 +19,16 @@ public void menu() throws ClassNotFoundException, IOException, Exception {
 		System.out.println("    2. 출력");
 		System.out.println("    3. 파일 저장");
 		System.out.println("    4. 파일 읽기");
-		System.out.println("    5. 종료");
+		System.out.println("    5. 이름으로 오름차순");
+		System.out.println("    6. 종료");
 		num = scan.nextInt();
 		
-		if(num == 5) break;
+		if(num == 6) break;
 		if(num == 1) member = new MemberInsert(); //부모 = new 자식
 		else if(num == 2) member = new MemberPrint();
 		else if(num == 3) member = new MemberFileOutput();
 		else if(num == 4) member = new MemberFileInput();
+		else if(num == 5) member = new MemberNameAsc();  // <=Comparator
 		
 		member.execute(arrayList); //호출
 	}//while

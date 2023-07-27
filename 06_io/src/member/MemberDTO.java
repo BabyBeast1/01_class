@@ -47,5 +47,9 @@ public class MemberDTO implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	public String toString() {
+		return no + "\t" + name + "\t" + age +"\t" + phone + "\t" + address;
+	}
 }
 	
